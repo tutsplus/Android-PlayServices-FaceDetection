@@ -41,6 +41,7 @@ public class FaceOverlayView extends View {
         FaceDetector detector = new FaceDetector.Builder( getContext() )
                 .setTrackingEnabled(true)
                 .setLandmarkType(FaceDetector.ALL_LANDMARKS)
+                .setClassificationType(FaceDetector.ALL_CLASSIFICATIONS)
                 .setMode(FaceDetector.ACCURATE_MODE)
                 .build();
 
