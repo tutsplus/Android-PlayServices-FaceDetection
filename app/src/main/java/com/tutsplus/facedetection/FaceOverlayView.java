@@ -38,6 +38,7 @@ public class FaceOverlayView extends View {
 
     public void setBitmap( Bitmap bitmap ) {
         mBitmap = bitmap;
+        Frame frame;
         FaceDetector detector = new FaceDetector.Builder( getContext() )
                 .setTrackingEnabled(true)
                 .setLandmarkType(FaceDetector.ALL_LANDMARKS)
@@ -47,7 +48,7 @@ public class FaceOverlayView extends View {
         if (!detector.isOperational()) {
             //Handle contingency
         } else {
-            Frame frame = new Frame.Builder().setBitmap(bitmap).build();
+            frame = new Frame.Builder().setBitmap(bitmap).build();
             mFaces = detector.detect(frame);
             detector.release();
         }
